@@ -14,6 +14,7 @@
         android:layout_height="match_parent" />
 
     <Button
+        android:id="@+id/btMap"
         android:layout_width="300dp"
         android:layout_height="80dp"
         android:layout_alignBottom="@id/maps"

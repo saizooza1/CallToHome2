@@ -1,10 +1,12 @@
 package com.example.calltohome;
 
-
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.location.Address;
 import android.location.Location;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,11 +46,17 @@ public class LocationActivity extends AppCompatActivity
     private LocationRequest mLocationRequest;
     private GoogleMap mGoogleMap;
     private Marker mMarker;
+    private Button Btmap;
+    private Address location;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+
+        Btmap=(Button) findViewById(R.id.btMap);
+
+        LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
 
 
 
@@ -68,6 +76,17 @@ public class LocationActivity extends AppCompatActivity
                 .setInterval(5000)
                 .setFastestInterval(3000)
                 .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+        Btmap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+
+                
+            }
+        });
+
+
     }
 
     private void startLocationUpdate() {
@@ -120,8 +139,9 @@ public class LocationActivity extends AppCompatActivity
         mMarker = mGoogleMap.addMarker(new MarkerOptions()
                 .position(latLng)
                 .title("Dru")
-                .snippet("Dru sp")
-                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher)));
+                .snippet("Dru sp"));
+                //.icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher)));
+
     }
 
     @Override
@@ -205,3 +225,6 @@ public class LocationActivity extends AppCompatActivity
 
 
 }
+
+
+

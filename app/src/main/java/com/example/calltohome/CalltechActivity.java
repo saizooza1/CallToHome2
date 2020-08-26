@@ -78,7 +78,7 @@ public class CalltechActivity extends AppCompatActivity implements DatePickerDia
             @Override
             public void onClick(View v) {
 
-                String sql = "INSERT INTO `orderl` (`user_id`, `abode`, `repair_list`, `pay_type`, `date`) VALUES ('" + UserId + "', '" + eTabode.getText().toString().trim() + "', '" + eTjobname.getText().toString().trim() + "', '" + spinnerpay + "', '" + setData + "')";
+                String sql = "INSERT INTO `orderl` (`user_id`, `abode`, `repair_list`, `pay_type`, `date`, `price`) VALUES ('" + UserId + "', '" + eTabode.getText().toString().trim() + "', '" + eTjobname.getText().toString().trim() + "', '" + spinnerpay + "', '" + setData + "','"+0+"');";
 
                 Dru.connection(Connect.connection())
                         .execute(sql)
