@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
                                         String user_id = resultSet.getString(1);
                                         Toast.makeText(getBaseContext(), "ok", Toast.LENGTH_SHORT).show();
                                         startActivity(new Intent(getApplication(), MenuActivity.class)
-                                                .putExtra("userid",user_id));
+                                                .putExtra("userid", user_id));
 
                                     } else {
                                         Toast.makeText(getBaseContext(), "no", Toast.LENGTH_LONG).show();
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         Sing_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplication(),Sing_upActivity.class));
+                startActivity(new Intent(getApplication(), Sing_upActivity.class));
 
             }
         });

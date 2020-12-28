@@ -33,8 +33,7 @@ public class HistoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
 
-        UserId=getIntent().getStringExtra("userid");
-
+        UserId = getIntent().getStringExtra("userid");
 
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
@@ -43,7 +42,7 @@ public class HistoryActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if(item.getItemId()==android.R.id.home){
+        if (item.getItemId() == android.R.id.home) {
             onBackPressed();
         }
         return super.onOptionsItemSelected(item);
@@ -56,31 +55,31 @@ public class HistoryActivity extends AppCompatActivity {
     }
 
     private void fetchOrder() {
-        UserId=getIntent().getStringExtra("sid");
-        Toast.makeText(getBaseContext(),""+UserId,Toast.LENGTH_SHORT).show();
-        String sql = "SELECT order_id,abode,repair_list,date FROM orderl WHERE user_id='"+UserId+"'";
-                Dru.connection(Connect.connection())
-                        .execute(sql)
-                        .commit(new ExecuteQuery() {
-                            @Override
-                            public void onComplete(ResultSet resultSet) {
-                                try {
+        UserId = getIntent().getStringExtra("sid");
+        Toast.makeText(getBaseContext(), "" + UserId, Toast.LENGTH_SHORT).show();
+        String sql = "SELECT order_id,abode,repair_list,date FROM orderl WHERE user_id='" + UserId + "'";
+        Dru.connection(Connect.connection())
+                .execute(sql)
+                .commit(new ExecuteQuery() {
+                    @Override
+                    public void onComplete(ResultSet resultSet) {
+                        try {
 
-                                    item=new ArrayList<Order>();
-                                    while (resultSet.next()){
-                                        Order order=new Order(
-                                                resultSet.getString(1),
-                                                resultSet.getString(2),
-                                                resultSet.getString(3),
-                                                resultSet.getString(4));
-                                        item.add(order);
-                                    }
-                                    mRecyclerView.setAdapter(new OrderAdapter());
-                                } catch (SQLException e) {
-                                    e.printStackTrace();
-                                }
+                            item = new ArrayList<Order>();
+                            while (resultSet.next()) {
+                                Order order = new Order(
+                                        resultSet.getString(1),
+                                        resultSet.getString(2),
+                                        resultSet.getString(3),
+                                        resultSet.getString(4));
+                                item.add(order);
                             }
-                        });
+                            mRecyclerView.setAdapter(new OrderAdapter());
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
     }
 
     private class OrderAdapter extends RecyclerView.Adapter<OrderHolder> {
@@ -122,10 +121,10 @@ public class HistoryActivity extends AppCompatActivity {
             super(itemView);
 
 
-            Order_id=(TextView)itemView.findViewById(R.id.tv_order_id);
-            Tv_adode=(TextView)itemView.findViewById(R.id.tv_adode);
-            Repair_list=(TextView)itemView.findViewById(R.id.tv_repair_list);
-            Date=(TextView)itemView.findViewById(R.id.tv_date);
+            Order_id = (TextView) itemView.findViewById(R.id.tv_order_id);
+            Tv_adode = (TextView) itemView.findViewById(R.id.tv_adode);
+            Repair_list = (TextView) itemView.findViewById(R.id.tv_repair_list);
+            Date = (TextView) itemView.findViewById(R.id.tv_date);
         }
     }
 }

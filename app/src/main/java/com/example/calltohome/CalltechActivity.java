@@ -78,7 +78,9 @@ public class CalltechActivity extends AppCompatActivity implements DatePickerDia
             @Override
             public void onClick(View v) {
 
-                String sql = "INSERT INTO `orderl` (`user_id`, `abode`, `repair_list`, `pay_type`, `date`, `price`) VALUES ('" + UserId + "', '" + eTabode.getText().toString().trim() + "', '" + eTjobname.getText().toString().trim() + "', '" + spinnerpay + "', '" + setData + "','"+0+"');";
+//                String sql = "INSERT INTO `orderl` (`order_id`,`user_id`, `abode`, `repair_list`, `pay_type`, `date`, `price`) VALUES (null,'" + UserId + "', '" + eTabode.getText().toString().trim() + "', '" + eTjobname.getText().toString().trim() + "', '" + spinnerpay + "', '" + setData + "','" + 0 + "')";
+                String sql= "INSERT INTO `orderl` (`order_id`, `user_id`, `abode`, `repair_list`, `pay_type`, `date`, `price`) VALUES (NULL, '"+UserId+"', '"+eTabode.getText().toString().trim()+"', '"+eTjobname.getText().toString().trim()+"', '"+spinnerpay+"', '"+setData+"', '0')";
+
 
                 Dru.connection(Connect.connection())
                         .execute(sql)
@@ -86,8 +88,10 @@ public class CalltechActivity extends AppCompatActivity implements DatePickerDia
                             @Override
                             public void onComplete() {
 
+
                                 Toast.makeText(getBaseContext(), "Insert success", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(getBaseContext(), LocationActivity.class));
+
+                                //startActivity(new Intent(getBaseContext(), LocationActivity.class));
 
                             }
                         });

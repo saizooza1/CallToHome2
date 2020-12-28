@@ -13,14 +13,14 @@
     <ImageView
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:src="@drawable/main"/>
+        android:src="@drawable/main" />
 
     <EditText
         android:id="@+id/Username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Username"
-        
+
         android:inputType="textEmailAddress" />
 
     <EditText
@@ -44,12 +44,5 @@
         android:hint="Sing up"
         android:textColorHint="#180404" />
 
-    <Button
-        android:id="@+id/tech"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:gravity="center"
-        android:hint="Technicianlogin"
-        android:textColorHint="#180404" />
+
 </LinearLayout>

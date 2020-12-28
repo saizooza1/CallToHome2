@@ -38,15 +38,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="จ่ายเงินแบบ"/>
+            android:text="จ่ายเงินแบบ" />
+
         <Spinner
             android:id="@+id/spinnerpay"
             android:layout_width="0dp"
             android:layout_height="50dp"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
 
 
     </LinearLayout>
@@ -56,7 +58,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="ที่อยู่" />
-
 
 
     <LinearLayout

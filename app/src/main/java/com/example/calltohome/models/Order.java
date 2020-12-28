@@ -1,15 +1,13 @@
 package com.example.calltohome.models;
 
 
-
-
 public class Order {
     private String Order_id;
-    private  String adode;
-    private  String repair_list;
-    private  String date;
+    private String adode;
+    private String repair_list;
+    private String date;
 
-    public Order(){
+    public Order() {
 
     }
 

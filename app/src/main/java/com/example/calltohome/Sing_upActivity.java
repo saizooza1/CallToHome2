@@ -78,7 +78,7 @@ public class Sing_upActivity extends AppCompatActivity {
                             if (resultSet.next()) {
                                 Toast.makeText(getBaseContext(), "This Username is already in the system", Toast.LENGTH_SHORT).show();
                             } else {
-                                String sql = "INSERT INTO user(username,password,fullname,phone) VALUES ('" + Username.getText().toString().trim() + "','" + Password.getText().toString().trim() + "','" + Fullname.getText().toString().trim()+ "','" + PhoneNumber.getText().toString().trim() + "');";
+                                String sql = "INSERT INTO user(username,password,fullname,phone) VALUES ('" + Username.getText().toString().trim() + "','" + Password.getText().toString().trim() + "','" + Fullname.getText().toString().trim() + "','" + PhoneNumber.getText().toString().trim() + "');";
                                 Dru.connection(Connect.connection())
                                         .execute(sql)
                                         .commit(new ExecuteUpdate() {
